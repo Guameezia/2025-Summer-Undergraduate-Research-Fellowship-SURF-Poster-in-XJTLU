@@ -12,4 +12,6 @@
 | Validation Accuracy | [validation accuracy.png](https://github.com/Guameezia/2025_SURF_Poster_in_XJTLU/blob/1e4e6a7efe8c8688c255fbf37272c18eb12a1705/Images/validation%20accuracy.png) |
 | Test Accuracy (Bar) | [test accuracy.png](https://github.com/Guameezia/2025_SURF_Poster_in_XJTLU/blob/68db33e55454aeb845aadb9043ee09b02900ac5b/Images/test%20accuracy.png) |
 | SVD Process |  [SVD.jpg](https://github.com/Guameezia/2025_SURF_Poster_in_XJTLU/blob/86982f56342927dcc48000cb73504fd9b3a6aa13/Images/SVD.jpg)  |
-| Class Distribution | [class distribution.jpg] |
+| Class Distribution | [class distribution.jpg](https://github.com/Guameezia/2025_SURF_Poster_in_XJTLU/blob/bba6f78975438352bd0facd8120ecf578b4a80a5/Images/class%20distribution.jpg) |
+| Result without SVD | (without svd.jpg) |
+| Result with SVD | (with svd.jpg) |
