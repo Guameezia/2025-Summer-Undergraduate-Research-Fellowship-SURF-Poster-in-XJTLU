@@ -13,6 +13,8 @@
 \usepackage{enumitem}
 \usepackage{microtype}
 \usepackage{times}
+\usepackage{cellspace}
+\setlength{\tabcolsep}{1pt}
 
 
 \setlist[itemize]{
@@ -625,22 +627,47 @@ textborder=none,above=bottom}
 \headerbox{\scriptsize Contact Information}{name=info,column=3,below=result,headershape=rectangle,textborder=rectangle,boxheaderheight=1em,above=bottom}{
 
 \vspace{-0.5em}
-\begin{tabular}{c|c}
+\hspace{-1em}
+\begin{minipage}[b]{0.4\textwidth}
+    
+\begin{tabular}{S{c}|S{c}}
 
-\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
 \vspace{-0.1em}
 \centering
 % \textbf{Project QR \\ Code}
 Project \\ QR Code
 \end{minipage}
 &
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
 \vspace{-1em}
-\includegraphics[scale=0.075]{qr.png}
+\includegraphics[width=\textwidth+1.6em]{qr_nobg.png}
 \end{minipage}
 
 \end{tabular}
 
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.5\textwidth}
+    
+\begin{tabular}{S{c}|S{c}}
+
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-0.1em}
+\centering
+\hspace{0.4em} Poster \\ 
+\hspace{0.4em} QR Code \\
+\hspace{0.4em} (Details)
+\end{minipage}
+&
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{-1em}
+\includegraphics[scale=0.075]{QR.png}
+\end{minipage}
+
+\end{tabular}
+
+\end{minipage}
 }
 
 
