@@ -62,7 +62,6 @@
 % \tikzstyle{arrow} = [line width=0.1pt,->,>=stealth]
 
 
-\graphicspath{{figures/}} % Directory in which figures are stored
 \definecolor{posterbg}{RGB}{173,215,220}
 \definecolor{refbg}{RGB}{0,106,163}
 \definecolor{bordercol}{RGB}{30,58,138} % Border color of content boxes
@@ -352,7 +351,7 @@ Accuracy, AUC, Precision, and Recall. Test outputs include probabilities and cla
 \node[block, below left=0.15cm and 1.2cm of svd_denoise] (calc_k) {Import $k$ Value};
 \node[block, below=of calc_k] (gauss_blur) {Bilateral Filter};
 \node[block, below=of gauss_blur] (resizing) {Resizing};
-\draw[line] (svd_denoise.west) -- node[above]{\tiny Yes} ++(-3em,0) -| ++(0,-2em) -- (calc_k.east);
+\draw[line] (svd_denoise.west) -- node[above]{\tiny Yes} ++(-3em,0) |- (calc_k.east);
 \draw[line] (calc_k) -- (gauss_blur);
 \draw[line] (gauss_blur) -- (resizing);
 
@@ -485,23 +484,6 @@ In essence, the process consists of a rotation, followed by a scaling operation,
 \vspace{-1.5em}
 
 As shown in the figure, SVD can effectively achieve data compression in image processing. 
-% By retaining the top
-
-% $k$ largest singular 
-
-% values, we can appr-
-
-% oximate the original 
-
-% matrix with signifi-
-
-% cantly reduced data, 
-
-% leading to substan-
-
-% tial storage savings. 
-
-% \vspace{-9.5em}
 
 \begin{minipage}[b]{0.43\textwidth}
 By retaining the top $k$ largest singular values, we can approximate the original matrix with significantly reduced data, leading to substantial storage savings. 
@@ -635,7 +617,6 @@ textborder=none,above=bottom}
 \begin{minipage}[t]{0.5\textwidth}
 \vspace{-0.1em}
 \centering
-% \textbf{Project QR \\ Code}
 Project \\ QR Code
 \end{minipage}
 &
