@@ -438,13 +438,17 @@ SVD (Singular Value Decomposition) is a matrix factorization method in linear al
 $\mathbf{A}$: An $m \times n$ real or complex matrix. \\
 $\mathbf{U}$: An $m \times m$ orthogonal matrix, known as the \emph{left singular vectors matrix}. \\
 $\boldsymbol{\Sigma}$: An $m \times n$ diagonal matrix where the non- negative real numbers on its diagonal are called \emph{singular values}. \\
-$\mathbf{V}^\text{T}$: The transpose of $\mathbf{V}$. $\mathbf{V}^\text{T} = \mathbf{V}^{-1}$ \\
+$\mathbf{V}^\text{T}$: The transpose of $\mathbf{V}$. \\ 
 $\mathbf{V}$ is an $n \times n$ orthogonal matrix  known as the \emph{right singular vectors matrix}.\\ 
+$\mathbf{V}^\text{T} = \mathbf{V}^{-1}$ \\
 
+\vspace{-1em}
 
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\textwidth}
+
+
 
 \noindent \textbf{The algebraic principles of SVD} \\
 In essence, the process consists of a rotation, followed by a scaling operation, and then another rotation.
@@ -492,57 +496,91 @@ By retaining the top $k$ largest singular values, we can approximate the origina
     \includegraphics[width=\linewidth+1em]{SVD.jpg}
 \end{minipage}
 
-\vspace{-0.8em}
+\vspace{-0.5em}
 
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.65\textwidth}
-
-\vspace{0.1em}
-
-\noindent \textbf{Applications of SVD in Image Processing} \\
-
-\vspace{-4em}
-
-\setlength{\arraycolsep}{2pt}
-
-\[
-\boldsymbol{IM}\!
-= \!\boldsymbol{PSQ}^\mathsf{T} \!
-= (\boldsymbol{p}_1, \boldsymbol{p}_2, \ldots, \boldsymbol{p}_n)
-\!\begin{bmatrix} \!
-s_1 & 0 & 0 & 0 \\ 
-0 & s_2 & 0 & 0 \\[-5pt]
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & 0 & s_n 
-\!\!\end{bmatrix}\!\!
-\!\!\begin{bmatrix}
-\boldsymbol{q}_1^\mathsf{T} \\[1pt]
-\boldsymbol{q}_2^\mathsf{T} \\[-5pt] 
-\vdots \\ 
-\boldsymbol{q}_n^\mathsf{T} \!\!
-\end{bmatrix}\!\!\!\!\!\!
-\quad (s_1 \!\!>\!\! s_2 \!\!>\!\! s_3 \!\!>\!\! \cdots\!\! > \!\!s_n \!\!>\!\! 0)\!
-\]
-\vspace{-2em}
-\[
-\begin{aligned}
-\boldsymbol{IM} \!
-&= \!{s_1 \boldsymbol{p}_1 \boldsymbol{q}_1^\mathsf{T} 
-\!+ \!s_2 \boldsymbol{p}_2 \boldsymbol{q}_2^\mathsf{T} 
-\!+ \!s_3 \boldsymbol{p}_3 \boldsymbol{q}_3^\mathsf{T} 
-\!+ \cdots +\! s_n \boldsymbol{p}_n \boldsymbol{q}_n^\mathsf{T}}_{\text{}}
-\! = \!\boldsymbol{T}_1 \!+\! \boldsymbol{T}_2\! +\! \boldsymbol{T}_3 \!+ \cdots + \!\boldsymbol{T}_n
-\end{aligned}
-\]
 \end{minipage}
 % \hfill
-% \begin{minipage}[b]{0.34\textwidth}
+% \begin{minipage}[b]{0.65\textwidth}
 
-% \vspace{-3em}
+\vspace{0.4em}
 
-% % \includegraphics[width=\linewidth]{SVD.jpg}
+\noindent \textbf{Applications of SVD in Image Processing} 
+
+\vspace{0.3em}
+
+\includegraphics[width=\linewidth]{svd_compress.png}
+
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=1
+\end{minipage} 
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=10
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=20
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=50
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=100
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=150
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.12\textwidth}
+    \centering
+    $k$=200
+\end{minipage}
+
+\vspace{-0.5em}
+% \vspace{-4em}
+
+% \setlength{\arraycolsep}{2pt}
+
+% \[
+% \boldsymbol{IM}\!
+% = \!\boldsymbol{U\Sigma V}^\mathsf{T} \!\!
+% = \!(\boldsymbol{u}_1, \boldsymbol{u}_2, \ldots, \boldsymbol{u}_n)\!\!
+% \!\begin{bmatrix} \!
+% \sigma_1 & 0 & 0 & 0 \\ 
+% 0 & \sigma_2 & 0 & 0 \\[-5pt]
+% \vdots & \vdots & \ddots & \vdots \\
+% 0 & 0 & 0 & \sigma_n 
+% \!\!\end{bmatrix}\!\!
+% \!\!\begin{bmatrix}
+% \boldsymbol{v}_1^\mathsf{T} \\[1pt]
+% \boldsymbol{v}_2^\mathsf{T} \\[-5pt] 
+% \vdots \\ 
+% \boldsymbol{v}_n^\mathsf{T} \!\!
+% \end{bmatrix}\!\!\!\!\!\!\!
+% \quad (\sigma_1 \!\!>\!\! \sigma_2 \!\!>\!\! \sigma_3 \!\!>\!\! \cdots\!\! > \!\!\sigma_n \!\!>\!\! 0)\!
+% \]
+% \vspace{-2em}
+% \[
+% \begin{aligned}
+% \boldsymbol{IM} \!
+% &= \!{\sigma_1 \boldsymbol{u}_1 \boldsymbol{v}_1^\mathsf{T} 
+% \!+ \!\sigma_2 \boldsymbol{u}_2 \boldsymbol{v}_2^\mathsf{T} 
+% \!+ \!\sigma_3 \boldsymbol{u}_3 \boldsymbol{v}_3^\mathsf{T} 
+% \!+ \cdots +\! \sigma_n \boldsymbol{u}_n \boldsymbol{v}_n^\mathsf{T}}_{\text{}}
+% \! = \!\boldsymbol{T}_1 \!+\! \boldsymbol{T}_2\! +\! \boldsymbol{T}_3 \!+ \cdots + \!\boldsymbol{T}_n
+% \end{aligned}
+% \]
 % \end{minipage}
+
 
 }
 
